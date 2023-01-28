@@ -3,12 +3,14 @@ package campfire;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
 
 public class Marshmallow {
 
     private Stripe[] stripes;
     private Pane gamePane;
     private Ellipse ellipse;
+    private Rectangle rectangle;
 
     public Marshmallow(Pane gamePane) {
         this.stripes = new Stripe[8];
@@ -28,6 +30,11 @@ public class Marshmallow {
         this.ellipse.setCenterY(Constants.STARTING_YLOC + Constants.STRIPE_HEIGHT * this.stripes.length / 2);
         //this.ellipse.setStroke(Color.BLUE);
         this.gamePane.getChildren().add(this.ellipse);
+        //for the stick
+        this.rectangle = new Rectangle(Constants.X_LIMIT, 10, Color.SADDLEBROWN);
+        this.rectangle.setX(Constants.STARTING_XLOC + Constants.STRIPE_WIDTH + 200);
+        this.rectangle.setY(Constants.STARTING_YLOC + Constants.STRIPE_HEIGHT * this.stripes.length / 2 - 5);
+        this.gamePane.getChildren().add(this.rectangle);
     }
 
     public void move(int direction) {
@@ -39,7 +46,9 @@ public class Marshmallow {
                         this.stripes[i].setX(this.stripes[i].getX() - Constants.MOVEMENT_OFFSET);
                     }
                     this.ellipse.setCenterX(this.ellipse.getCenterX() - Constants.MOVEMENT_OFFSET);
+                    this.rectangle.setX(this.rectangle.getX() - Constants.MOVEMENT_OFFSET);
                 }
+
                 break;
             case 2:
                 if (this.stripes[0].getX() + Constants.STRIPE_WIDTH < 1009){
@@ -47,6 +56,7 @@ public class Marshmallow {
                         this.stripes[i].setX(this.stripes[i].getX() + Constants.MOVEMENT_OFFSET);
                     }
                     this.ellipse.setCenterX(this.ellipse.getCenterX() + Constants.MOVEMENT_OFFSET);
+                    this.rectangle.setX(this.rectangle.getX() + Constants.MOVEMENT_OFFSET);
                 }
 
                 break;
@@ -56,8 +66,9 @@ public class Marshmallow {
                         this.stripes[i].setY(this.stripes[i].getY() + Constants.MOVEMENT_OFFSET);
                     }
                     this.ellipse.setCenterY(this.ellipse.getCenterY() + Constants.MOVEMENT_OFFSET);
-                }
+                    this.rectangle.setY(this.rectangle.getY() + Constants.MOVEMENT_OFFSET);
 
+                }
                 break;
             case 4:
                 if (this.stripes[0].getY() > 0){
@@ -65,8 +76,8 @@ public class Marshmallow {
                         this.stripes[i].setY(this.stripes[i].getY() - Constants.MOVEMENT_OFFSET);
                     }
                     this.ellipse.setCenterY(this.ellipse.getCenterY() - Constants.MOVEMENT_OFFSET);
+                    this.rectangle.setY(this.rectangle.getY() - Constants.MOVEMENT_OFFSET);
                 }
-
                 break;
             default:
                 break;
