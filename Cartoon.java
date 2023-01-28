@@ -39,7 +39,9 @@ public class Cartoon {
         } else if (this.colorCounter == 16) {
             this.marshmallow.setStripesColor(Color.PERU);
         } else if (this.colorCounter == 24) {
-            this.marshmallow.setStripesColor(Color.SIENNA);
+            this.marshmallow.setStripesColor(Color.SADDLEBROWN);
+        } else if (this.colorCounter == 30) {
+            this.marshmallow.setStripesColor(Color.BLACK);
         }
         this.marshmallow.darken();
         this.gamePane.setOnKeyPressed((KeyEvent event) -> this.handleKeyPress(event));

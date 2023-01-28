@@ -17,7 +17,7 @@ public class Stripe {
     public void darken() {
         //not sure if this will be good; FLORALWHITE might need to change too
         if (this.color == Color.WHITE) this.color = Color.OLDLACE;
-        else this.color = this.color.deriveColor(0, 1.2, 0.99, 1);
+        else this.color = this.color.deriveColor(0, 1.2, 0.95, 1);
         this.rectangle.setFill(this.color);
     }
 
