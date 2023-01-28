@@ -4,7 +4,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 public class PaneOrganizer {
-
     private BorderPane root;
     private Pane gamePane;
 
@@ -12,7 +11,7 @@ public class PaneOrganizer {
         this.root = new BorderPane();
 
         this.createGamePane();
-
+        new Cartoon(this.gamePane);
     }
 
     public BorderPane getRoot() {
