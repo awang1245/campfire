@@ -21,10 +21,11 @@ public class PaneOrganizer {
 
     private void createRootPane() {
         this.root = new BorderPane();
-        Image image = new Image();
+        Image image = new Image(Constants.DANIEL_ART);
         ImageView iv1 = new ImageView();
         iv1.setImage(image);
-        iv1.setFitWidth(1280);
+        iv1.setFitWidth(1009);
+        iv1.setFitHeight(700);
         this.root.getChildren().add(iv1);
     }
 

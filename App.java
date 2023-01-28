@@ -9,7 +9,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         PaneOrganizer organizer = new PaneOrganizer();
-        Scene scene = new Scene(organizer.getRoot(), 1280, 800);
+        Scene scene = new Scene(organizer.getRoot(), 1009, 700);
         stage.setScene(scene);
         stage.setTitle("Cooking Marshmallows!!");
         stage.show();
