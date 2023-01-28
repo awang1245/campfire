@@ -65,4 +65,14 @@ public class Marshmallow {
     public void rotate(){
 
     }
+
+    public void darken(){
+        for(int i = 0; i < this.stripes.length; i++){
+            //if marshmallow stripe is certain distance from fire,
+            this.stripes[i].darken();
+        }
+
+        //if ellipse is certain distance from fire,
+
+    }
 }

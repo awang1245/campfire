@@ -9,14 +9,15 @@ public class Stripe {
     private Color color;
 
     public Stripe(){
-        this.color = Color.BLACK;
+        this.color = Color.WHITE;
         this.rectangle = new Rectangle(Constants.STRIPE_WIDTH, Constants.STRIPE_HEIGHT, this.color);
 
     }
     public void darken(){
         //not sure if this will be good; FLORALWHITE might need to change too
-        if (this.color == Color.WHITE) this.color = Color.FLORALWHITE;
-        else this.color = Color.WHITE.darker();
+        if (this.color == Color.WHITE) this.color = Color.PAPAYAWHIP;
+        else this.color = this.color.deriveColor(1, 1.1, 1, 1);
+        this.rectangle.setFill(this.color);
     }
     public void setX(double loc){
         this.rectangle.setX(loc);

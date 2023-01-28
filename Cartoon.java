@@ -29,8 +29,7 @@ public class Cartoon {
     }
 
     private void updateTimeline(){
-        //if marshmallow side is certain distance from fire, change a shade darker
-
+        this.marshmallow.darken();
         this.gamePane.setOnKeyPressed((KeyEvent event) -> this.handleKeyPress(event));
         this.gamePane.setFocusTraversable(true);
     }
