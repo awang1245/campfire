@@ -15,7 +15,7 @@ public class Cartoon {
     private Marshmallow marshmallow;
     public Cartoon(Pane gamePane){
         this.gamePane = gamePane;
-        this.marshmallow = marshmallow;
+        this.marshmallow = new Marshmallow();
         this.setUpTimeline();
     }
 
