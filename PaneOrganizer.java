@@ -1,5 +1,7 @@
 package campfire;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -9,13 +11,21 @@ public class PaneOrganizer {
     private Pane gamePane;
 
     public PaneOrganizer() {
-        this.root = new BorderPane();
+        this.createRootPane();
         this.createGamePane();
-
     }
 
     public BorderPane getRoot() {
-        return root;
+        return this.root;
+    }
+
+    private void createRootPane() {
+        this.root = new BorderPane();
+        Image image = new Image();
+        ImageView iv1 = new ImageView();
+        iv1.setImage(image);
+        iv1.setFitWidth(1280);
+        this.root.getChildren().add(iv1);
     }
 
     private void createGamePane() {
