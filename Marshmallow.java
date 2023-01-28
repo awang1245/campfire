@@ -34,28 +34,39 @@ public class Marshmallow {
         //need to add checking for whether it's still on the screen
         switch (direction) {
             case 1:
-                for (int i = 0; i < this.stripes.length; i++) {
-                    this.stripes[i].setX(this.stripes[i].getX() - Constants.MOVEMENT_OFFSET);
+                if (this.ellipse.getCenterX() > Constants.X_LIMIT){
+                    for (int i = 0; i < this.stripes.length; i++) {
+                        this.stripes[i].setX(this.stripes[i].getX() - Constants.MOVEMENT_OFFSET);
+                    }
+                    this.ellipse.setCenterX(this.ellipse.getCenterX() - Constants.MOVEMENT_OFFSET);
                 }
-                this.ellipse.setCenterX(this.ellipse.getCenterX() - Constants.MOVEMENT_OFFSET);
                 break;
             case 2:
-                for (int i = 0; i < this.stripes.length; i++) {
-                    this.stripes[i].setX(this.stripes[i].getX() + Constants.MOVEMENT_OFFSET);
+                if (this.stripes[0].getX() + Constants.STRIPE_WIDTH < 1009){
+                    for (int i = 0; i < this.stripes.length; i++) {
+                        this.stripes[i].setX(this.stripes[i].getX() + Constants.MOVEMENT_OFFSET);
+                    }
+                    this.ellipse.setCenterX(this.ellipse.getCenterX() + Constants.MOVEMENT_OFFSET);
                 }
-                this.ellipse.setCenterX(this.ellipse.getCenterX() + Constants.MOVEMENT_OFFSET);
+
                 break;
             case 3:
-                for (int i = 0; i < this.stripes.length; i++) {
-                    this.stripes[i].setY(this.stripes[i].getY() + Constants.MOVEMENT_OFFSET);
+                if (this.stripes[7].getY() + Constants.STRIPE_HEIGHT < 700){
+                    for (int i = 0; i < this.stripes.length; i++) {
+                        this.stripes[i].setY(this.stripes[i].getY() + Constants.MOVEMENT_OFFSET);
+                    }
+                    this.ellipse.setCenterY(this.ellipse.getCenterY() + Constants.MOVEMENT_OFFSET);
                 }
-                this.ellipse.setCenterY(this.ellipse.getCenterY() + Constants.MOVEMENT_OFFSET);
+
                 break;
             case 4:
-                for (int i = 0; i < this.stripes.length; i++) {
-                    this.stripes[i].setY(this.stripes[i].getY() - Constants.MOVEMENT_OFFSET);
+                if (this.stripes[0].getY() > 0){
+                    for (int i = 0; i < this.stripes.length; i++) {
+                        this.stripes[i].setY(this.stripes[i].getY() - Constants.MOVEMENT_OFFSET);
+                    }
+                    this.ellipse.setCenterY(this.ellipse.getCenterY() - Constants.MOVEMENT_OFFSET);
                 }
-                this.ellipse.setCenterY(this.ellipse.getCenterY() - Constants.MOVEMENT_OFFSET);
+
                 break;
             default:
                 break;

@@ -10,4 +10,6 @@ public class Constants {
     public static final int STRIPE_HEIGHT = 9;
 
     public static final int ELLIPSE_WIDTH = 10;
+
+    public static final int X_LIMIT = 400;
 }
