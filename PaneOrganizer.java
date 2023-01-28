@@ -8,7 +8,6 @@ public class PaneOrganizer {
 
     public PaneOrganizer() {
         this.root = new BorderPane();
-
     }
 
     public BorderPane getRoot() {
