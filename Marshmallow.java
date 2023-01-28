@@ -32,7 +32,7 @@ public class Marshmallow {
         this.gamePane.getChildren().add(this.ellipse);
         //for the stick
         this.rectangle = new Rectangle(Constants.X_LIMIT, 10, Color.SADDLEBROWN);
-        this.rectangle.setX(Constants.STARTING_XLOC + Constants.STRIPE_WIDTH + 200);
+        this.rectangle.setX(Constants.STARTING_XLOC + Constants.STRIPE_WIDTH);
         this.rectangle.setY(Constants.STARTING_YLOC + Constants.STRIPE_HEIGHT * this.stripes.length / 2 - 5);
         this.gamePane.getChildren().add(this.rectangle);
     }
