@@ -28,7 +28,8 @@ public class Marshmallow {
         this.ellipse = new Ellipse(Constants.ELLIPSE_WIDTH, Constants.STRIPE_HEIGHT * this.stripes.length / 2);
         this.ellipse.setCenterX(Constants.STARTING_XLOC);
         this.ellipse.setCenterY(Constants.STARTING_YLOC + Constants.STRIPE_HEIGHT * this.stripes.length / 2);
-        //this.ellipse.setStroke(Color.BLUE);
+        this.ellipse.setFill(Color.WHITE);
+        this.ellipse.setStroke(Color.BLACK);
         this.gamePane.getChildren().add(this.ellipse);
         //for the stick
         this.rectangle = new Rectangle(Constants.X_LIMIT, 10, Color.SADDLEBROWN);
@@ -98,13 +99,15 @@ public class Marshmallow {
 
         for (int i = 0; i < this.stripes.length; i++) {
             //if marshmallow stripe is certain distance from fire,
-            if (this.stripes[i].getX() > Constants.FIRE_X_LEFT_OFFSET && this.stripes[i].getX() < Constants.FIRE_X_RIGHT_OFFSET){
+            if (this.stripes[i].getX() > Constants.FIRE_X_LEFT_OFFSET && this.stripes[i].getX() < Constants.FIRE_X_RIGHT_OFFSET
+            && this.stripes[i].getY() > Constants.FIRE_Y_UP_OFFSET){
                 this.stripes[i].darken();
             }
         }
 
         //if ellipse is certain distance from fire,
-        if (this.ellipse.getCenterX() > Constants.FIRE_X_LEFT_OFFSET && this.ellipse.getCenterX() < Constants.FIRE_X_RIGHT_OFFSET){
+        if (this.ellipse.getCenterX() > Constants.FIRE_X_LEFT_OFFSET && this.ellipse.getCenterX() < Constants.FIRE_X_RIGHT_OFFSET
+                && this.ellipse.getCenterY() > Constants.FIRE_Y_UP_OFFSET){
             Color color = (Color) this.ellipse.getFill();
             if (color == Color.WHITE) color = Color.OLDLACE;
             else color = color.deriveColor(0, 1.2, 0.95, 1);

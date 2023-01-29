@@ -14,4 +14,6 @@ public class Constants {
     public static final int FIRE_X_LEFT_OFFSET = 300;
     public static final int FIRE_X_RIGHT_OFFSET = 500;
 
+    public static final int FIRE_Y_UP_OFFSET = 350;
+
 }
