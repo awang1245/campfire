@@ -89,12 +89,21 @@ public class Marshmallow {
     }
 
     public void darken() {
+
         for (int i = 0; i < this.stripes.length; i++) {
             //if marshmallow stripe is certain distance from fire,
-            this.stripes[i].darken();
+            if (this.stripes[i].getX() > Constants.FIRE_X_LEFT_OFFSET && this.stripes[i].getX() < Constants.FIRE_X_RIGHT_OFFSET){
+                this.stripes[i].darken();
+            }
         }
 
         //if ellipse is certain distance from fire,
+        if (this.ellipse.getCenterX() > Constants.FIRE_X_LEFT_OFFSET && this.ellipse.getCenterX() < Constants.FIRE_X_RIGHT_OFFSET){
+            Color color = (Color) this.ellipse.getFill();
+            if (color == Color.WHITE) color = Color.OLDLACE;
+            else color = color.deriveColor(0, 1.2, 0.95, 1);
+            this.rectangle.setFill(color);
+        }
 
     }
 
