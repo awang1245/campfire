@@ -85,10 +85,12 @@ public class Marshmallow {
     }
 
     public void rotate() {
+        //this is so janky lmfao
         for(int i = 0; i < this.stripes.length; i++){
-            if (i+1 < this.stripes.length) this.stripes[i] = this.stripes[i+1];
-            else this.stripes[i] = this.stripes[0];
-            this.stripes[i].setY(i * Constants.STRIPE_HEIGHT + Constants.STARTING_YLOC);
+            Color newColor;
+            if (i+1 < this.stripes.length) newColor = this.stripes[i+1].getColor();
+            else newColor = this.stripes[0].getColor();
+            this.stripes[i].setColor(newColor);
         }
     }
 

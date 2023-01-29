@@ -43,4 +43,7 @@ public class Stripe {
     public void setColor(Color color) {
         this.color = color;
     }
+    public Color getColor(){
+        return this.color;
+    }
 }
