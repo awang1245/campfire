@@ -85,7 +85,11 @@ public class Marshmallow {
     }
 
     public void rotate() {
-
+        for(int i = 0; i < this.stripes.length; i++){
+            if (i+1 < this.stripes.length) this.stripes[i] = this.stripes[i+1];
+            else this.stripes[i] = this.stripes[0];
+            this.stripes[i].setY(i * Constants.STRIPE_HEIGHT + Constants.STARTING_YLOC);
+        }
     }
 
     public void darken() {
@@ -102,7 +106,7 @@ public class Marshmallow {
             Color color = (Color) this.ellipse.getFill();
             if (color == Color.WHITE) color = Color.OLDLACE;
             else color = color.deriveColor(0, 1.2, 0.95, 1);
-            this.rectangle.setFill(color);
+            this.ellipse.setFill(color);
         }
 
     }

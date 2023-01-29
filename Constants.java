@@ -10,9 +10,7 @@ public class Constants {
     public static final int STRIPE_HEIGHT = 9;
 
     public static final int ELLIPSE_WIDTH = 10;
-
     public static final int X_LIMIT = 400;
-
     public static final int FIRE_X_LEFT_OFFSET = 300;
     public static final int FIRE_X_RIGHT_OFFSET = 500;
 
