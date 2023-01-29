@@ -41,7 +41,7 @@ public class Marshmallow {
         //need to add checking for whether it's still on the screen
         switch (direction) {
             case 1:
-                if (this.ellipse.getCenterX() > Constants.X_LIMIT){
+                if (this.ellipse.getCenterX() > Constants.X_LIMIT) {
                     for (int i = 0; i < this.stripes.length; i++) {
                         this.stripes[i].setX(this.stripes[i].getX() - Constants.MOVEMENT_OFFSET);
                     }
@@ -51,7 +51,7 @@ public class Marshmallow {
 
                 break;
             case 2:
-                if (this.stripes[0].getX() + Constants.STRIPE_WIDTH < 1009){
+                if (this.stripes[0].getX() + Constants.STRIPE_WIDTH < 1009) {
                     for (int i = 0; i < this.stripes.length; i++) {
                         this.stripes[i].setX(this.stripes[i].getX() + Constants.MOVEMENT_OFFSET);
                     }
@@ -61,7 +61,7 @@ public class Marshmallow {
 
                 break;
             case 3:
-                if (this.stripes[7].getY() + Constants.STRIPE_HEIGHT < 700){
+                if (this.stripes[7].getY() + Constants.STRIPE_HEIGHT < 700) {
                     for (int i = 0; i < this.stripes.length; i++) {
                         this.stripes[i].setY(this.stripes[i].getY() + Constants.MOVEMENT_OFFSET);
                     }
@@ -71,7 +71,7 @@ public class Marshmallow {
                 }
                 break;
             case 4:
-                if (this.stripes[0].getY() > 0){
+                if (this.stripes[0].getY() > 0) {
                     for (int i = 0; i < this.stripes.length; i++) {
                         this.stripes[i].setY(this.stripes[i].getY() - Constants.MOVEMENT_OFFSET);
                     }
@@ -103,5 +103,9 @@ public class Marshmallow {
             //if marshmallow stripe is certain distance from fire,
             this.stripes[i].setColor(color);
         }
+    }
+
+    public double getX() {
+        return this.rectangle.getX();
     }
 }
